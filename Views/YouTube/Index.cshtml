@@ -1,0 +1,185 @@
+﻿@model List<YouTubeApiProject.Models.YouTubeVideoModel>
+
+<!-- Menu -->
+
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="app-brand-link">
+            <span class="app-brand-logo demo">
+                <img src="../images/logo.png" width="40" alt="Logo">
+            </span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">Youtube</span>
+        </a>
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm d-flex align-items-center justify-content-center"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home"></i>
+                <div class="text-truncate" data-i18n="Basic">Home</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a asp-area="" asp-controller="YouTube" asp-action="Trending" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-videos"></i>
+                <div class="text-truncate" data-i18n="Basic">Trending</div>
+            </a>
+        </li>
+        <li class="menu-item active open">
+            <a asp-area="" asp-controller="YouTube" asp-action="Index" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-search-alt"></i>
+                <div class="text-truncate" data-i18n="Basic">Search</div>
+            </a>
+        </li>
+     </ul>
+
+    <!-- Footer Section -->
+    <div class="footer mt-4 py-3">
+        <div class="text-center">
+            &copy; 2024 - Youtube -
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </div>
+</aside>
+<!-- / Menu -->
+<!-- Layout container -->
+<div class="layout-page">
+
+<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+     id="layout-navbar">
+    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+        <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+            <i class="bx bx-menu bx-md"></i>
+        </a>
+    </div>
+
+    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+        <!-- Search -->
+        <div class="navbar-nav align-items-center">
+            <form asp-action="Search" method="post">
+            <div class="nav-item d-flex align-items-center">
+                <i class="bx bx-search bx-md"></i>
+                <input type="text" name="query" class="form-control border-0 shadow-none ps-1 ps-sm-2" placeholder="Search..." />
+            </div>
+            </form>
+        </div>
+        <!-- /Search -->
+
+        <ul class="navbar-nav flex-row align-items-center ms-auto">
+
+        </ul>
+    </div>
+</nav>
+
+<!-- / Navbar -->
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        <!-- Content -->
+        <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="row">
+                @if (Model != null && Model.Any())
+                {
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <!-- Display the search term here -->
+                                <h6 class="mb-1" style="text-align:center;">
+                                    Search for 
+                                    <strong>
+                                        <i>
+                                            @if (ViewBag.SearchTerm != null)
+                                            {
+                                                @Html.Raw(ViewBag.SearchTerm)
+                                            }
+                                            else
+                                            {
+                                                <span>Type your video name then press 'Enter'</span>
+                                            }
+                                        </i>
+                                    </strong>
+                                </h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    @foreach (var video in Model)
+                    {
+                        <!-- First Card -->
+                        <div class="col-lg-3 col-md-6 mb-6 mt-4">
+                            <div class="card h-100">
+                                <!-- Link to PlayVideo action with the video ID -->
+                                <a href="@Url.Action("PlayVideo", "YouTube", new { videoId = video.VideoId })" class="text-decoration-none text-dark">
+                                    <!-- Top section for the video thumbnail -->
+                                    <div class="card-image-section">
+                                        <img src="@video.ThumbnailUrl" alt="@video.Title" class="card-img-top img-fluid" />
+                                    </div>
+
+                                    <!-- Bottom section for title, author, and view count -->
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-3" style="font-size: 1.2em;">@video.Title</h4>
+
+                                        <!-- New section for author profile photo and name -->
+                                        <div class="d-flex align-items-center mb-2">
+                                            <div class="avatar me-2">
+                                                <img src="@video.AuthorProfilePhotoUrl" alt="@video.Author" class="rounded-circle" style="width: 30px; height: 30px;" />
+                                            </div>
+                                            <div>
+                                                <span class="fw-medium">@video.Author</span><br />
+                                                <small class="text-muted fw-medium">@video.FormattedViewCount views</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="mb-1" style="text-align:center;">Type your videos name and press 'Enter'</h6>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <!-- / Content -->
+        <!-- Footer -->
+        <footer class="content-footer footer bg-footer-theme">
+            <hr style="height: 1px; background-color: gray; border: none;" />
+            <div class="container-xxl">
+                <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                    <div class="text-body">
+                        &copy; 2024 - Youtube - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- / Footer -->
+
+        <div class="content-backdrop fade"></div>
+    </div>
+    <!-- Content wrapper -->
+
+    <script>
+        // Optional: Add event listener for Enter key press
+        document.getElementById('videoSearch').addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                // Logic to handle search (e.g., submitting the form)
+                const searchTerm = this.value;
+                window.location.href = '@Url.Action("Search", "YourControllerName")' + '?query=' + encodeURIComponent(searchTerm);
+            }
+        });
+    </script>
+
+</div>

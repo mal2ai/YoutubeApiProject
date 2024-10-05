@@ -1,0 +1,134 @@
+﻿@model List<YouTubeApiProject.Models.YouTubeVideoModel>
+
+<!-- Menu -->
+
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="app-brand-link">
+            <span class="app-brand-logo demo">
+                <img src="../images/logo.png" width="40" alt="Logo">
+            </span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">Youtube</span>
+        </a>
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm d-flex align-items-center justify-content-center"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item ">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home"></i>
+                <div class="text-truncate" data-i18n="Basic">Home</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a asp-area="" asp-controller="YouTube" asp-action="Trending" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-videos"></i>
+                <div class="text-truncate" data-i18n="Basic">Trending</div>
+            </a>
+        </li>
+        <li class="menu-item ">
+            <a asp-area="" asp-controller="YouTube" asp-action="Index" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-search-alt"></i>
+                <div class="text-truncate" data-i18n="Basic">Search</div>
+            </a>
+        </li>
+     </ul>
+
+    <!-- Footer Section -->
+    <div class="footer mt-4 py-3">
+        <div class="text-center">
+            &copy; 2024 - Youtube -
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </div>
+</aside>
+<!-- / Menu -->
+    <!-- Layout container -->
+    <div class="layout-page">
+
+    
+
+    <!-- / Navbar -->
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        <!-- Content -->
+        <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="row">
+                <!-- Video Player Card -->
+                <div class="col-md-12">
+                    <div class="card mt-12">
+                        <div class="card-body">
+                            <h4 class="mb-1">Privacy Policy</h4>
+                            <hr>
+                            <div class="mt-6">
+                                We collect information about the apps, browsers, and <strong>devices</strong> you use to access Google services, which helps us provide features like automatic product updates
+                                and dimming your screen if your battery runs low.
+                            </div>
+                            <div class="mt-4">
+                                The information we collect includes <strong>unique identifiers</strong> browser type and settings, device type and settings, operating system, mobile network information 
+                                including carrier name and phone number, and application version number. We also collect information about the interaction of your apps, 
+                                browsers, and devices with our services, including <strong>IP address</strong> crash reports, system activity, and the date, time, and <strong>referrer URL</strong> of 
+                                your request.
+                            </div>
+                            <div class="mt-4">
+                                We collect this information when a Google service on your device contacts our servers — for example, when you install an app from the Play Store or when a service checks
+                                for automatic updates. If you’re using an <strong>Android device with Google apps</strong>, your device periodically contacts Google servers to provide information about 
+                                your device and connection to our services. This information includes things like your <strong>device type and carrier name</strong> crash reports, which apps
+                                you've installed, and, depending on your device settings, <strong>other information about how you’re <br> using your Android device</strong>.
+                            </div>
+                            <div class="mt-4">
+                                We collect information about your activity in our services, which we use to do things like recommend a YouTube video you might like.
+                                The activity information we collect may include:
+                            </div>
+                            <div class="mt-4">
+                                <ul style="list-style-type: square;">
+                                    <li>Terms you search for</li>
+                                    <li>Videos you watch</li>
+                                    <li>Views and interactions with content and ads</li>
+                                    <li>Voice and audio information</li>
+                                    <li>Purchase activity</li>
+                                    <li>People with whom you communicate or share content</li>
+                                    <li>Activity on third-party sites and apps that use our services</li>
+                                    <li>Chrome browsing history you’ve synced with your Google Account</li>
+                                </ul>
+                            </div>
+                            <div class="mt-4">
+                                If you use our <strong>services to make and receive calls or send and receive messages</strong> we may collect call and message log information like your phone number,
+                                calling-party number, receiving-party number, forwarding numbers, sender and recipient email address, time and date of calls and messages, duration of calls, 
+                                routing information, and types and volumes of calls and messages.
+                            </div>
+                            <div class="mt-4">
+                                You can visit your Google Account to find and manage activity information that’s saved in your account.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- / Content -->
+        <!-- Footer -->
+        <footer class="content-footer footer bg-footer-theme">
+            <hr style="height: 1px; background-color: gray; border: none;" />
+            <div class="container-xxl">
+                <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+                    <div class="text-body">
+
+                        &copy; 2024 - Youtube - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+        <!-- / Footer -->
+
+        <div class="content-backdrop fade"></div>
+    </div>
+    <!-- Content wrapper -->
+</div>

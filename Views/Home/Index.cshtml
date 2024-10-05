@@ -1,0 +1,255 @@
+﻿@model List<YouTubeApiProject.Models.YouTubeVideoModel>
+
+<!-- Menu -->
+
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+        <a asp-area="" asp-controller="Home" asp-action="Index" class="app-brand-link">
+            <span class="app-brand-logo demo">
+                <img src="../images/logo.png" width="40" alt="Logo">
+            </span>
+            <span class="app-brand-text demo menu-text fw-bold ms-2">Youtube</span>
+        </a>
+
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm d-flex align-items-center justify-content-center"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item active open">
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home"></i>
+                <div class="text-truncate" data-i18n="Basic">Home</div>
+            </a>
+        </li>
+        <li class="menu-item">
+            <a asp-area="" asp-controller="YouTube" asp-action="Trending" class="menu-link">
+                <i class="menu-icon tf-icons bx bxs-videos"></i>
+                <div class="text-truncate" data-i18n="Basic">Trending</div>
+            </a>
+        </li>
+        <li class="menu-item ">
+            <a asp-area="" asp-controller="YouTube" asp-action="Index" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-search-alt"></i>
+                <div class="text-truncate" data-i18n="Basic">Search</div>
+            </a>
+        </li>
+     </ul>
+
+    <!-- Footer Section -->
+    <div class="footer mt-4 py-3">
+        <div class="text-center">
+            &copy; 2024 - Youtube -
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </div>
+</aside>
+<!-- / Menu -->
+<!-- Layout container -->
+<div class="layout-page">
+    <!-- Navbar -->
+
+    <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+         id="layout-navbar">
+        <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+            <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+                <i class="bx bx-menu bx-md"></i>
+            </a>
+        </div>
+
+        <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <!-- Search -->
+            <div class="navbar-nav align-items-center">
+                <form asp-controller="YouTube" asp-action="Search" method="post">
+                    <div class="nav-item d-flex align-items-center">
+                        <i class="bx bx-search bx-md"></i>
+                        <input type="text" name="query" class="form-control border-0 shadow-none ps-1 ps-sm-2" placeholder="Search..." />
+                    </div>
+                </form>
+            </div>
+            <!-- /Search -->
+
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+               
+            </ul>
+        </div>
+    </nav>
+
+    <!-- / Navbar -->
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        <!-- Content -->
+
+        <div class="container-xxl flex-grow-1 container-p-y">
+            <!-- Accordion -->
+            <h5>Youtube</h5>
+            <div class="row g-6">
+                <div class="col-md">
+                    <small class="text-light fw-medium">Question</small>
+                    <div class="accordion mt-4" id="accordionExample">
+                        <div class="card accordion-item active">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button type="button"
+                                        class="accordion-button"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#accordionOne"
+                                        aria-expanded="true"
+                                        aria-controls="accordionOne">
+                                    What is Youtube?
+                                </button>
+                            </h2>
+
+                            <div id="accordionOne"
+                                 class="accordion-collapse collapse show"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    YouTube is a widely popular online platform that allows users to upload, share, view, and interact with videos. Launched in 2005, 
+                                    YouTube has become one of the most visited websites in the world, offering content across a vast range of categories, from entertainment 
+                                    and education to vlogging, music, gaming, and tutorials. It enables users to create channels, subscribe to others, and participate in 
+                                    communities centered around video content. YouTube also supports live streaming, making it a powerful tool for content creators and 
+                                    businesses to engage with audiences in real-time. With billions of users globally, it plays a key role in digital media and online culture.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button type="button"
+                                        class="accordion-button collapsed"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#accordionTwo"
+                                        aria-expanded="false"
+                                        aria-controls="accordionTwo">
+                                    Purpose of Youtube?
+                                </button>
+                            </h2>
+                            <div id="accordionTwo"
+                                 class="accordion-collapse collapse"
+                                 aria-labelledby="headingTwo"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    The primary purpose of YouTube is to provide a platform where people can share and access video content from around the world. 
+                                    It serves several key functions:
+
+                                    <div class="card mt-4">
+                                        <div class="card-body">
+                                            <strong>Content Creation and Sharing</strong><br />
+                                            YouTube allows individuals, businesses, and organizations to create, upload,
+                                            and share videos on a wide range of topics, offering a space for self-expression, entertainment, and education.
+                                        </div>
+                                    </div>
+                                    <div class="card mt-2">
+                                        <div class="card-body">
+                                            <strong>Information and Learning</strong><br />
+                                            Many use YouTube to share knowledge through tutorials, educational content, and how-to videos,
+                                            making it a valuable resource for learning new skills and gaining information.
+                                        </div>
+                                    </div>
+                                    <div class="card mt-2">
+                                        <div class="card-body">
+                                            <strong>Entertainment</strong><br /> 
+                                            YouTube is a major hub for entertainment, including music videos, movies, vlogs, gaming streams, and more,
+                                            catering to diverse tastes and interests.
+                                        </div>
+                                    </div>
+                                    <div class="card mt-2">
+                                        <div class="card-body">
+                                            <strong>Community Building</strong><br />
+                                            It facilitates engagement through comments, likes, subscriptions, and video responses, helping creators
+                                            build communities and interact with their audiences.
+                                        </div>
+                                    </div>
+                                    <div class="card mt-2">
+                                        <div class="card-body">
+                                            <strong>Marketing and Monetization</strong><br />
+                                            YouTube also serves as a platform for businesses and creators to market products or services,
+                                            as well as monetize their content through ads, sponsorships, and memberships.
+                                        </div>
+                                    </div>
+
+                                    
+                                    <br />
+                                    In essence, YouTube's purpose is to democratize access to video content, allowing anyone with an internet connection to share, learn, and be entertained.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button type="button"
+                                        class="accordion-button collapsed"
+                                        data-bs-toggle="collapse"
+                                        data-bs-target="#accordionThree"
+                                        aria-expanded="false"
+                                        aria-controls="accordionThree">
+                                    What this site can do?
+                                </button>
+                            </h2>
+                            <div id="accordionThree"
+                                 class="accordion-collapse collapse"
+                                 aria-labelledby="headingThree"
+                                 data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    This site offers a dynamic and interactive experience for YouTube video enthusiasts, allowing you to explore the most popular and trending videos, 
+                                    search for any specific content using keywords, and watch your selected videos seamlessly. Whether you're curious about the latest viral videos or 
+                                    want to dive deep into your favorite topics, this platform makes it easy to find and enjoy videos in just a few clicks. With a clean and user-friendly 
+                                    interface, you can effortlessly switch between browsing trending content, performing detailed searches, and watching videos, making your video discovery 
+                                    experience smooth and enjoyable. Dive in, explore, and enjoy a wide variety of YouTube content, all from the comfort of one powerful platform!
+                                    
+                                    <p class="mt-4">Here’s what this site can do:</span>
+
+                                        <div class="card mt-4">
+                                            <div class="card-body">
+                                                <strong>View Trending Videos</strong><br />
+                                                Explore the most popular and trending videos on YouTube, easily accessible on a dedicated page
+                                                showcasing current viral content.
+                                            </div>
+                                        </div>
+                                        <div class="card mt-2">
+                                            <div class="card-body">
+                                                <strong>Search for Videos</strong><br />
+                                                Use the built-in search feature to find specific videos based on your interests. Enter keywords,
+                                                and quickly discover relevant content from across YouTube.
+                                            </div>
+                                        </div>
+                                        <div class="card mt-2">
+                                            <div class="card-body">
+                                                <strong>Watch Videos</strong><br />
+                                                Seamlessly play your chosen videos directly on the site. Each video has its own page where you can enjoy
+                                                uninterrupted viewing in an integrated player.
+                                            </div>
+                                        </div>
+                                        <div class="card mt-2">
+                                            <div class="card-body">
+                                                <strong>Easy Navigation</strong><br />
+                                                Switch between trending, searching, and playing videos with a clean, intuitive interface designed
+                                                for a smooth user experience.be.
+                                            </div>
+                                        </div>
+                                        <div class="card mt-2">
+                                            <div class="card-body">
+                                                <strong>Up-to-date Content</strong><br />
+                                                Stay updated with the latest video trends and access a variety of YouTube content with just a few clicks.
+                                            </div>
+                                        </div>
+
+                                    <br />
+                                    This platform brings together everything you need to discover and watch YouTube videos effortlessly, making it an all-in-one solution for your 
+                                    video-watching needs!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!--/ Accordion -->
+        </div>
+        <!-- / Content -->
+
+        <div class="content-backdrop fade"></div>
+    </div>
+    <!-- Content wrapper -->
+</div>
