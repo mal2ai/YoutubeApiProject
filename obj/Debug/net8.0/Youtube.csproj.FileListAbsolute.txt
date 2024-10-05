@@ -373,3 +373,4 @@ C:\Users\User\source\repos\Youtube\obj\Debug\net8.0\refint\Youtube.dll
 C:\Users\User\source\repos\Youtube\obj\Debug\net8.0\Youtube.pdb
 C:\Users\User\source\repos\Youtube\obj\Debug\net8.0\Youtube.genruntimeconfig.cache
 C:\Users\User\source\repos\Youtube\obj\Debug\net8.0\ref\Youtube.dll
+C:\Users\User\source\repos\Youtube\obj\Debug\net8.0\Youtube.sourcelink.json
