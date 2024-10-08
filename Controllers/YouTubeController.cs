@@ -19,7 +19,8 @@ namespace YouTubeApiProject.Controllers
         // Display Search Page
         public IActionResult Index()
         {
-            return View(new List<YouTubeVideoModel>()); // Pass an empty list initially
+            
+            return View("~/Views/YouTube/Index.cshtml", new List<YouTubeVideoModel>());
         }
 
         // Handle the search query
@@ -71,6 +72,11 @@ namespace YouTubeApiProject.Controllers
             var trendingVideos = await _youtubeService.GetTrendingVideosAsync(); // Get trending videos
 
             return View(trendingVideos); // Pass the trending videos to the view
+        }
+
+        public IActionResult Channel()
+        {
+            return View("~/Views/YouTube/Channel.cshtml", new List<YouTubeVideoModel>());
         }
     }
 }

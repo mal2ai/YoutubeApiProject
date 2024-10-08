@@ -1,5 +1,44 @@
 ﻿@model List<YouTubeApiProject.Models.YouTubeVideoModel>
 
+
+<style>
+    .title {
+        display: block;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 2000px; /* Limit the width to trigger ellipsis */
+    }
+
+    .tooltip-container {
+        position: relative; /* Needed for positioning the tooltip */
+        cursor: pointer; /* Change cursor to pointer */
+    }
+
+    .tooltip {
+        visibility: hidden; /* Hidden by default */
+        width: 200px; /* Set width for the tooltip */
+        background-color: rgba(0, 0, 0, 0.75); /* Background color */
+        color: #fff; /* Text color */
+        text-align: center; /* Center text */
+        border-radius: 5px; /* Rounded corners */
+        padding: 5px; /* Padding */
+        position: absolute; /* Position the tooltip */
+        z-index: 1; /* Ensure it appears above other elements */
+        bottom: 100%; /* Position above the text */
+        left: 50%; /* Center horizontally */
+        margin-left: -100px; /* Adjust to center */
+        opacity: 0; /* Hidden by default */
+        transition: opacity 0.3s; /* Fade effect */
+    }
+
+    .tooltip-container:hover .tooltip {
+        visibility: visible; /* Show tooltip on hover */
+        opacity: 1; /* Fade in */
+    }
+
+</style>
+
 <!-- Menu -->
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
@@ -113,7 +152,7 @@
                     {
                         <!-- First Card -->
                         <div class="col-lg-3 col-md-6 mb-6 mt-4">
-                            <div class="card h-100">
+                            <div class="card h-80">
                                 <!-- Link to PlayVideo action with the video ID -->
                                 <a href="@Url.Action("PlayVideo", "YouTube", new { videoId = video.VideoId })" class="text-decoration-none text-dark">
                                     <!-- Top section for the video thumbnail -->
@@ -123,7 +162,12 @@
 
                                     <!-- Bottom section for title, author, and view count -->
                                     <div class="card-body">
-                                        <h4 class="card-title mb-3" style="font-size: 1.2em;">@video.Title</h4>
+                                        <h4 class="card-title mb-3" style="font-size: 1.2em;">
+                                            <span class="tooltip-container">
+                                                <span class="title">@video.Title</span>
+                                                <span class="tooltip">@video.Title</span> <!-- Tooltip -->
+                                            </span>
+                                        </h4>
 
                                         <!-- New section for author profile photo and name -->
                                         <div class="d-flex align-items-center mb-2">

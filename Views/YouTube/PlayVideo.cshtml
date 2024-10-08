@@ -141,13 +141,16 @@
                             <h4 class="mb-1">@ViewBag.VideoTitle</h4>
 
                             <!-- Author Info -->
-                            <div class="d-flex align-items-center mt-2">
-                                <img src="@ViewBag.AuthorProfilePhoto" alt="Author" class="rounded-circle" width="40" height="40">
-                                <div class="ms-2">
-                                    <h6 class="mb-0">@ViewBag.AuthorName</h6>
-                                    <span class="text-muted">@ViewBag.AuthorSubscriberCount subscribers</span>
+                            <a href="@Url.Action("Channel", "Youtube", new { channelId = ViewBag.AuthorChannelId })" class="text-decoration-none">
+                                <div class="d-flex align-items-center mt-2">
+                                    <img src="@ViewBag.AuthorProfilePhoto" alt="Author" class="rounded-circle" width="40" height="40">
+                                    <div class="ms-2">
+                                        <h6 class="mb-0">@ViewBag.AuthorName</h6>
+                                        <span class="text-muted">@ViewBag.AuthorSubscriberCount subscribers</span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
+
 
                             <div class="mt-4">
                                 <div class="card" style="background-color: rgba(0, 0, 0, 0.05);">
