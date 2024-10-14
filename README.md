@@ -1,6 +1,6 @@
-# Important
+<p align="center"><a href="https://dotnet.microsoft.com/en-us/apps/aspnet" target="_blank"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.techmeet360.com%2Fblog%2Fhttp-repl%2Fasp-net-core-logo%2F&psig=AOvVaw1mMXCGvlH1Cex9bZYbJxKA&ust=1728994996780000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjsjbfujYkDFQAAAAAdAAAAABAH" width="400" alt="Logo"></a></p>
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.techmeet360.com%2Fblog%2Fhttp-repl%2Fasp-net-core-logo%2F&psig=AOvVaw1mMXCGvlH1Cex9bZYbJxKA&ust=1728994996780000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIjsjbfujYkDFQAAAAAdAAAAABAH" width="400" alt="Laravel Logo"></a></p>
+# Important
 
 # ASP.NET Core Based Startup Template
 
