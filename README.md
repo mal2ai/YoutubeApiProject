@@ -1,6 +1,6 @@
 # Important
 
-<img src="images/logo-asp.png" width="48">
+<img src="images/logo-asp.png" width=50% height=50%>
 
 # ASP.NET Core Based Startup Template
 
