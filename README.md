@@ -1,5 +1,7 @@
 # Important
 
+![Alt text](wwwroot/images/example.png)
+
 # ASP.NET Core Based Startup Template
 
 This template is a simple startup project to start
