@@ -1,5 +1,3 @@
-"# YoutubeApiProject" 
-
 # Important
 
 # ASP.NET Core Based Startup Template
