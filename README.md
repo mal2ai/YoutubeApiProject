@@ -1,5 +1,3 @@
-<img align="center" src="https://github.com/mal2ai/YoutubeApiProject/blob/main/wwwroot/images/logo-asp.png" width="100" height="100"/>
-
 # Important
 
 # ASP.NET Core Based Startup Template
