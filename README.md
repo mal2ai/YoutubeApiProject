@@ -1,6 +1,6 @@
 # Important
 
-![Alt text](wwwroot/images/logo-asp.png)
+<img src="images/logo-asp.png" width="48">
 
 # ASP.NET Core Based Startup Template
 
