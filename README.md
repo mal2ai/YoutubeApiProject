@@ -1,6 +1,6 @@
 # Important
 
-![alt](images/logo-asp.png){: width="50%"}
+![alt|500](https://github.com/mal2ai/YoutubeApiProject/blob/main/wwwroot/images/logo-asp.png)
 
 # ASP.NET Core Based Startup Template
 
