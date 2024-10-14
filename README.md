@@ -8,6 +8,7 @@ using ASP.NET Core Web App (Model-View-Controller).
 ## Prerequirements
 
 * Visual Studio 2022 (with ASP.NET and Web Development workload installed).
+* Bootstrap
 
 ##  NuGet Packages
 * Google.Apis.YouTube.v3 – to interact with YouTube API
