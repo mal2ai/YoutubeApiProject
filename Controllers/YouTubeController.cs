@@ -19,7 +19,7 @@ namespace YouTubeApiProject.Controllers
         // Display Search Page
         public IActionResult Index()
         {
-            
+
             return View("~/Views/YouTube/Index.cshtml", new List<YouTubeVideoModel>());
         }
 

@@ -1,5 +1,4 @@
 ﻿<!doctype html>
-
 <html lang="en"
       class="light-style layout-menu-fixed layout-compact"
       dir="ltr"
@@ -22,8 +21,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
-          rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
 
     <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
 
@@ -31,6 +29,7 @@
     <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="../assets/css/demo.css" />
+    <link rel="stylesheet" href="../css/site.css" />
 
     <!-- Vendors CSS -->
     <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
@@ -42,12 +41,42 @@
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="../assets/js/config.js"></script>
+
+    <!-- CSS -->
+    <style>
+        /* Full-page overlay */
+        .spinner-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Ensure it appears on top */
+        }
+
+        /* Hide the spinner initially */
+        #spinner {
+            display: none;
+        }
+    </style>
 </head>
 
 <body>
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
+
+            <!-- Full-page Spinner -->
+            <div id="spinner" class="spinner-overlay">
+                <div class="spinner-border" role="status">
+                    <span class="loader"></span>
+                </div>
+            </div>
+           
             @RenderBody()
         </div>
 
@@ -58,13 +87,11 @@
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-
     <script src="../assets/vendor/libs/jquery/jquery.js"></script>
     <script src="../assets/vendor/libs/popper/popper.js"></script>
     <script src="../assets/vendor/js/bootstrap.js"></script>
     <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
     <script src="../assets/vendor/js/menu.js"></script>
-
     <!-- endbuild -->
     <!-- Vendors JS -->
     <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
@@ -77,5 +104,23 @@
 
     <!-- Place this tag before closing body tag for github widget button. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    <!-- JavaScript to show/hide the spinner -->
+    <script>
+        function showSpinner() {
+            document.getElementById('spinner').style.display = 'flex';
+        }
+
+        function hideSpinner() {
+            document.getElementById('spinner').style.display = 'none';
+        }
+
+        // Example: Show spinner for 5 seconds on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            showSpinner();
+            setTimeout(hideSpinner, 1000); // Adjust the time as needed
+        });
+    </script>
+
 </body>
 </html>

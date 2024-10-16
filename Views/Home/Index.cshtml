@@ -1,5 +1,7 @@
 ﻿@model List<YouTubeApiProject.Models.YouTubeVideoModel>
 
+
+
 <!-- Menu -->
 
 <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
@@ -64,18 +66,22 @@
 
         <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
             <!-- Search -->
-            <div class="navbar-nav align-items-center">
-                <form asp-controller="YouTube" asp-action="Search" method="post">
-                    <div class="nav-item d-flex align-items-center">
-                        <i class="bx bx-search bx-md"></i>
-                        <input type="text" name="query" class="form-control border-0 shadow-none ps-1 ps-sm-2" placeholder="Search..." />
+            <div class="navbar-nav flex-grow-1">
+                <form asp-controller="YouTube" asp-action="Search" method="post" class="w-100">
+                    <div class="nav-item d-flex align-items-center w-100">
+                        <i class="bx bx-search bx-md me-2"></i>
+                        <input type="text" name="query" class="form-control border-0 shadow-none ps-1 ps-sm-2 w-100" placeholder="Search..." />
                     </div>
                 </form>
             </div>
             <!-- /Search -->
 
             <ul class="navbar-nav flex-row align-items-center ms-auto">
-               
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/mal2ai/YoutubeApiProject.git" target="_blank" title="Click to open GitHub">
+                        <img src="../images/pp.jpg" alt="Profile Photo" class="rounded-circle" width="40" height="40">
+                    </a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -86,8 +92,9 @@
         <!-- Content -->
 
         <div class="container-xxl flex-grow-1 container-p-y">
+
             <!-- Accordion -->
-            <h5>Welcome, Bro!</h5>
+            <h5>Welcome, Bro!</h5><i class="fa fa-address-book" aria-hidden="true"></i>
             <div class="row g-6">
                 <div class="col-md">
                     <small class="text-light fw-medium">Question</small>
@@ -276,4 +283,5 @@
         <div class="content-backdrop fade"></div>
     </div>
     <!-- Content wrapper -->
+
 </div>

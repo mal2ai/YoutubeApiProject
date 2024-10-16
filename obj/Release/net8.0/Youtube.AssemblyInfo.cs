@@ -12,9 +12,9 @@ using System;
 using System.Reflection;
 
 [assembly: System.Reflection.AssemblyCompanyAttribute("Youtube")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8206a1c2a36c429059615cbb0823c0b2e408a69e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2fbbb088c4121caa342ff173287545b9afba8f4")]
 [assembly: System.Reflection.AssemblyProductAttribute("Youtube")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Youtube")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

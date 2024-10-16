@@ -329,6 +329,10 @@
       "PackagePath": "staticwebassets\\images\\logo.png"
     },
     {
+      "Id": "C:\\Users\\User\\source\\repos\\Youtube\\wwwroot\\images\\pp.jpg",
+      "PackagePath": "staticwebassets\\images\\pp.jpg"
+    },
+    {
       "Id": "C:\\Users\\User\\source\\repos\\Youtube\\wwwroot\\images\\search.png",
       "PackagePath": "staticwebassets\\images\\search.png"
     },

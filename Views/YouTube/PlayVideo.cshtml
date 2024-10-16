@@ -10,7 +10,7 @@
     }
 
     function loadVideo(videoId) {
-        console.log('Loading video with ID:', videoId);
+        console.log('Loading video with ID:', videoId); // Display video ID in the console
         if (player) {
             player.loadVideoById(videoId); // Load the new video ID if player already exists
         } else {
@@ -36,9 +36,11 @@
 
     // Add event listener for when the DOM is fully loaded
     document.addEventListener("DOMContentLoaded", function () {
+        console.log('DOM fully loaded');
         loadVideo('@ViewBag.VideoId'); // Ensure the video is loaded when the DOM is ready
     });
 </script>
+
 
 <!-- Menu -->
 
@@ -101,19 +103,23 @@
 
     <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
         <!-- Search -->
-        <div class="navbar-nav align-items-center">
-            <form asp-action="Search" method="post">
-                <div class="nav-item d-flex align-items-center">
-                    <i class="bx bx-search bx-md"></i>
-                    <input type="text" name="query" class="form-control border-0 shadow-none ps-1 ps-sm-2" placeholder="Search..." />
-                </div>
-            </form>
-        </div>
+            <div class="navbar-nav flex-grow-1">
+                <form asp-controller="YouTube" asp-action="Search" method="post" class="w-100">
+                    <div class="nav-item d-flex align-items-center w-100">
+                        <i class="bx bx-search bx-md me-2"></i>
+                        <input type="text" name="query" class="form-control border-0 shadow-none ps-1 ps-sm-2 w-100" placeholder="Search..." />
+                    </div>
+                </form>
+            </div>
         <!-- /Search -->
 
-        <ul class="navbar-nav flex-row align-items-center ms-auto">
-            <!-- Add any additional items here -->
-        </ul>
+            <ul class="navbar-nav flex-row align-items-center ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/mal2ai/YoutubeApiProject.git" target="_blank" title="Click to open GitHub">
+                        <img src="../images/pp.jpg" alt="Profile Photo" class="rounded-circle" width="40" height="40">
+                    </a>
+                </li>
+            </ul>
     </div>
 </nav>
 
@@ -141,15 +147,13 @@
                             <h4 class="mb-1">@ViewBag.VideoTitle</h4>
 
                             <!-- Author Info -->
-                            <a href="@Url.Action("Channel", "Youtube", new { channelId = ViewBag.AuthorChannelId })" class="text-decoration-none">
-                                <div class="d-flex align-items-center mt-2">
-                                    <img src="@ViewBag.AuthorProfilePhoto" alt="Author" class="rounded-circle" width="40" height="40">
-                                    <div class="ms-2">
-                                        <h6 class="mb-0">@ViewBag.AuthorName</h6>
-                                        <span class="text-muted">@ViewBag.AuthorSubscriberCount subscribers</span>
-                                    </div>
+                            <div class="d-flex align-items-center mt-2">
+                                <img src="@ViewBag.AuthorProfilePhoto" alt="@ViewBag.AuthorName's profile photo" class="rounded-circle" width="40" height="40">
+                                <div class="ms-2">
+                                    <h6 class="mb-0">@ViewBag.AuthorName</h6>
+                                    <small class="text-muted">@ViewBag.AuthorSubscriberCount subscribers</small>
                                 </div>
-                            </a>
+                            </div>
 
 
                             <div class="mt-4">
@@ -171,23 +175,23 @@
                                                         var displayLength = Math.Min(shortDescriptionLength, description.Length);
 
                                                         // Display the short description
-                                                        @Html.Raw(description.Substring(0, displayLength))
+                                                    @Html.Raw(description.Substring(0, displayLength))
 
                                                         // Show '...more' button if description is longer than the display length
                                                         if (description.Length > shortDescriptionLength)
                                                         {
-                                                            <span id="moreContent" style="display: none;">
-                                                                @Html.Raw(description.Substring(shortDescriptionLength))
-                                                            </span>
-                                                            <button id="toggleButton" onclick="toggleDescription()" style="background: none; border: none; color: gray; cursor: pointer;">
-                                                                ...more
-                                                            </button>
+                                                    <span id="moreContent" style="display: none;">
+                                                        @Html.Raw(description.Substring(shortDescriptionLength))
+                                                    </span>
+                                                    <button id="toggleButton" onclick="toggleDescription()" style="background: none; border: none; color: gray; cursor: pointer;">
+                                                        ...more
+                                                    </button>
                                                         }
                                                     }
                                                     else
                                                     {
                                                     // Fallback message if the description is empty
-                                                        @Html.Raw("No description available.")
+                                                    @Html.Raw("No description available.")
                                                     }
                                                 }
                                             </p>
@@ -202,18 +206,7 @@
         </div>
 
         <!-- / Content -->
-        <!-- Footer -->
-        <footer class="content-footer footer bg-footer-theme">
-            <hr style="height: 1px; background-color: gray; border: none;" />
-            <div class="container-xxl">
-                <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
-                    <div class="text-body">
-                        &copy; 2024 - Youtube - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- / Footer -->
+        
         <div class="content-backdrop fade"></div>
     </div>
 </div>

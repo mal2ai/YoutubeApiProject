@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Yux/zvc3DmTvtRw5Xu9KQlGDBz0XLqTVQDJK44IV3M8=",
+  "Hash": "rdIN9osem9ZJ4XUXwniAxs6j+QAd3cgu177oGVQe9+w=",
   "Source": "Youtube",
   "BasePath": "_content/Youtube",
   "Mode": "Default",
@@ -1592,6 +1592,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\User\\source\\repos\\Youtube\\wwwroot\\images\\pp.jpg",
+      "SourceId": "Youtube",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\User\\source\\repos\\Youtube\\wwwroot\\",
+      "BasePath": "_content/Youtube",
+      "RelativePath": "images/pp.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\pp.jpg"
     },
     {
       "Identity": "C:\\Users\\User\\source\\repos\\Youtube\\wwwroot\\images\\search.png",
